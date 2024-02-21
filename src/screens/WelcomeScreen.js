@@ -70,7 +70,7 @@ export default function WelcomeScreen() {
 							style={{ fontSize: hp(2) }}
 							className="font-medium text-white tracking-widest"
 						>
-							Delicious Food App
+							Where Every Bite is a Discovery.
 						</Text>
 					</Animated.View>
 				</View>
