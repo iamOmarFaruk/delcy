@@ -12,10 +12,12 @@ import {
 	widthPercentageToDP as wp,
 	heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import { Bars3Icon, MagnifyingGlassIcon } from "react-native-heroicons/outline";
+import { MagnifyingGlassIcon } from "react-native-heroicons/outline";
 import Categories from "../components/categories";
 import axios from "axios";
 import Recipes from "../components/recipes";
+import TopAppBar from "../components/TopAppBar";
+
 export default function HomeScreen() {
 	const [activeCategory, setActiveCategory] = useState("Beef");
 	const [categories, setCategories] = useState([]);
@@ -67,24 +69,7 @@ export default function HomeScreen() {
 				className="space-y-6 pt-14"
 			>
 				{/* avatar and bell icon */}
-				<View  className="mx-4 flex-row justify-between items-center mb-2">
-					<Pressable
-						onPress={() => {
-							console.log("Pressed!");
-						}}
-						style={{
-							padding:10,
-							borderRadius: 100,
-							backgroundColor: "#DCDCDC",
-						}}
-					>
-						<Bars3Icon size={hp(4)} color="black" />
-					</Pressable>
-					<Image
-						source={require("../../assets/images/avatar.png")}
-						style={{ height: hp(5), width: hp(5.5) }}
-					/>
-				</View>
+				<TopAppBar />
 
 				{/* greetings and punchline */}
 				<View className="mx-4 space-y-2 mb-2">
