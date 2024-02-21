@@ -6,7 +6,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 
-import Categories from "../components/categories";
+import FoodCategory from "../components/FoodCategory";
 import axios from "axios";
 import Recipes from "../components/recipes";
 import TopAppBar from "../components/TopAppBar";
@@ -55,6 +55,9 @@ export default function HomeScreen() {
 			console.log("error: ", err.message);
 		}
 	};
+
+
+
 	return (
 		<View className="flex-1 bg-white">
 			<StatusBar style="dark" />
@@ -74,13 +77,10 @@ export default function HomeScreen() {
 
 				{/* categories */}
 				<View>
-					{categories.length > 0 && (
-						<Categories
-							categories={categories}
-							activeCategory={activeCategory}
-							handleChangeCategory={handleChangeCategory}
-						/>
-					)}
+				
+				<FoodCategory title="Dinner" imageUri={require('../../assets/images/avatar.png')} />
+				<FoodCategory title="Lunch" imageUri={require('../../assets/images/welcome.png')} />
+
 				</View>
 
 				{/* recipes */}
