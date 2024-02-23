@@ -16,22 +16,22 @@ export default FoodCategory;
 
 const styles = StyleSheet.create({
     box: {
-        width: 150,
-        height: 150,
+        width: 130,
+        height: 130,
         borderRadius: 20,
         overflow: 'hidden',
         alignItems: 'center',
         justifyContent: 'center',
         position: 'relative',
         zIndex: 1,
-        marginHorizontal:5,
+        marginHorizontal:8,
     },
     image: {
         position: 'absolute',
-        width:130, 
-        height:130,
-        bottom:-30,
-        right:-35,
+        width:120, 
+        height:120,
+        bottom:-40,
+        right:-50,
         zIndex:5,
     },
     text: {

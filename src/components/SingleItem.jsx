@@ -11,7 +11,9 @@ const SingleItem = ({ title, weight, price, imageUrl }) => {
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.weight}>{weight}</Text>
       <Text style={styles.price}>{price}</Text>
-      <TouchableOpacity style={styles.addButton}>
+    </View>
+    <View style={styles.addButton}>
+      <TouchableOpacity>
         <Text style={styles.addButtonText}>+</Text>
       </TouchableOpacity>
     </View>
@@ -32,16 +34,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 10,
     overflow: 'hidden',
-    elevation: 3, // for Android shadow
-    shadowOffset: { width: 1, height: 1 }, // for iOS shadow
-    shadowColor: '#333',
-    shadowOpacity: 0.3,
     margin: 10,
     marginBottom:20,
+    padding: 10,
   },
   image: {
-    width: 100,
-    height: 100,
+    width:80,
+    height:80,
     borderRadius: 50,
   },
   infoContainer: {
@@ -72,15 +71,11 @@ const styles = StyleSheet.create({
     height: 45,
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'absolute',
-    right: 10,
-    bottom: 10,
    
   },
   addButtonText: {
     color: '#fff',
-    fontSize: 30,
-    lineHeight:30, // Ensures the '+' is centered
-    left:1,
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });

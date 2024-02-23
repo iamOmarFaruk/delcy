@@ -8,13 +8,16 @@ import HeroText from "../components/HeroText";
 import SearchBar from "../components/SearchBar";
 import SingleItem from "../components/SingleItem";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import CartButton from "../components/CartButton";
 export default function HomeScreen() {
 	return (
-		<SafeAreaProvider style={{  backgroundColor: "white" }}>
+		<SafeAreaProvider style={{ backgroundColor: "white" }}>
 			<SafeAreaView style={{ flex: 1 }}>
 				<StatusBar style="dark" />
-				<View style={{ flex: 1, backgroundColor: "white", position:'relative' }}>
-					<View style={{ marginTop: 14, marginBottom: 10 }}>
+				<View
+					style={{ flex: 1, backgroundColor: "white", position: "relative" }}
+				>
+					<View style={{ marginTop: 14 }}>
 						{/* avatar and bell icon */}
 						<TopAppBar />
 
@@ -30,7 +33,7 @@ export default function HomeScreen() {
 							showsHorizontalScrollIndicator={false} // Hides the scroll indicator
 							contentContainerStyle={{
 								paddingRight: 10, // Adds padding at the end if needed
-								paddingBottom: 60,
+								paddingBottom: 90,
 							}}
 						>
 							<View style={{ flexDirection: "row", paddingHorizontal: 5 }}>
@@ -61,7 +64,7 @@ export default function HomeScreen() {
 						<ScrollView
 							showsVerticalScrollIndicator={false} // Hides the scroll indicator
 							contentContainerStyle={{
-								paddingBottom: 600, // Adds padding at the end if needed
+								paddingBottom: 560, // Adds padding at the end if needed
 								paddingTop: 20,
 							}}
 						>
@@ -93,6 +96,7 @@ export default function HomeScreen() {
 							/>
 						</ScrollView>
 					</View>
+					<CartButton buttonText="Go to Cart" price="$24.99" itemCount="3" />
 				</View>
 			</SafeAreaView>
 		</SafeAreaProvider>
