@@ -1,8 +1,4 @@
-import {
-	View,
-	Text,
-	ScrollView,
-} from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React, { useEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 
@@ -56,16 +52,10 @@ export default function HomeScreen() {
 		}
 	};
 
-
-
 	return (
 		<View className="flex-1 bg-white">
 			<StatusBar style="dark" />
-			<ScrollView
-				showsVerticalScrollIndicator={false}
-				contentContainerStyle={{ paddingBottom: 50 }}
-				className="space-y-6 pt-14"
-			>
+			<View className="space-y-6 pt-14">
 				{/* avatar and bell icon */}
 				<TopAppBar />
 
@@ -76,18 +66,45 @@ export default function HomeScreen() {
 				<SearchBar />
 
 				{/* categories */}
-				<View>
-				
-				<FoodCategory title="Dinner" imageUri={require('../../assets/images/avatar.png')} />
-				<FoodCategory title="Lunch" imageUri={require('../../assets/images/welcome.png')} />
-
+				<ScrollView
+      horizontal={true} // Enables horizontal scroll
+      showsHorizontalScrollIndicator={false} // Hides the scroll indicator
+      contentContainerStyle={{
+        paddingRight: 10, // Adds padding at the end if needed
+      }}
+    >
+				<View style={{ flexDirection: 'row', paddingHorizontal: 5 }}>
+					<FoodCategory
+						boxcolor="#eccc68"
+						title="Lunch"
+						imageUri={require("../../assets/images/welcome.png")}
+						
+					/>
+					<FoodCategory
+						boxcolor="#747d8c"
+						title="Dinner"
+						imageUri={require("../../assets/images/welcome.png")}
+					/>
+					<FoodCategory
+						boxcolor="#ff4757"
+						title="Dinner"
+						imageUri={require("../../assets/images/welcome.png")}
+					/>
+					<FoodCategory
+						boxcolor="#70a1ff"
+						title="Dinner"
+						imageUri={require("../../assets/images/welcome.png")}
+					/>
 				</View>
+
+</ScrollView>
+
 
 				{/* recipes */}
 				<View className="fixed inset-0">
 					<Recipes meals={meals} categories={categories} />
 				</View>
-			</ScrollView>
+			</View>
 		</View>
 	);
 }
