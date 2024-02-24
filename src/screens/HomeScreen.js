@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 
@@ -9,7 +9,14 @@ import SearchBar from "../components/SearchBar";
 import SingleItem from "../components/SingleItem";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import CartButton from "../components/CartButton";
+import { useNavigation } from "@react-navigation/native";
 export default function HomeScreen() {
+	const navigation = useNavigation();
+
+	const onPressHandler = () => {
+		// Navigate to the SingleFoodpage when the pressable view is tapped
+		navigation.navigate("SingleFoodpage");
+	};
 	return (
 		<SafeAreaProvider style={{ backgroundColor: "white" }}>
 			<SafeAreaView style={{ flex: 1 }}>
@@ -75,32 +82,14 @@ export default function HomeScreen() {
 									paddingTop: 10,
 								}}
 							>
-								<SingleItem
-									title="Mushroom Pizza"
-									weight="410g"
-									price="$14.99"
-									imageUrl={require("../../assets/images/welcome.png")}
-								/>
-
-								<SingleItem
-									title="Mushroom Pizza"
-									weight="410g"
-									price="$14.99"
-									imageUrl={require("../../assets/images/welcome.png")}
-								/>
-
-								<SingleItem
-									title="Mushroom Pizza"
-									weight="410g"
-									price="$14.99"
-									imageUrl={require("../../assets/images/welcome.png")}
-								/>
-								<SingleItem
-									title="Mushroom Pizza"
-									weight="410g"
-									price="$14.99"
-									imageUrl={require("../../assets/images/welcome.png")}
-								/>
+								<TouchableOpacity onPress={onPressHandler}>
+									<SingleItem
+										title="Mushroom Pizza"
+										weight="410g"
+										price="$14.99"
+										imageUrl={require("../../assets/images/welcome.png")}
+									/>
+								</TouchableOpacity>
 							</ScrollView>
 						</ScrollView>
 					</View>
