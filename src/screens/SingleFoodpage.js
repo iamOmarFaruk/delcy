@@ -10,6 +10,7 @@ import SingleItem from "../components/SingleItem";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import CartButton from "../components/CartButton";
 import FoodItemCard from "../components/FoodItemCard";
+import AddToCartButton from "../components/AddToCartButton";
 export default function SingleFoodpage() {
 	return (
 		<SafeAreaProvider style={{ backgroundColor: "white" }}>
@@ -34,7 +35,7 @@ export default function SingleFoodpage() {
 							<ScrollView
 								showsVerticalScrollIndicator={false} // Hides the scroll indicator
 								contentContainerStyle={{
-									paddingBottom: 400, // Adds padding at the end if needed
+									paddingBottom: 200, // Adds padding at the end if needed
 									paddingTop: 10,
 								}}
 							>
@@ -45,6 +46,15 @@ export default function SingleFoodpage() {
 										imageUrl={require("../../assets/images/welcome-bg.jpg")} // Replace with your local image path
 									/>
 									<View style={{ marginTop: 18 }}>
+										<Text
+											style={{
+												fontSize: 20,
+												fontWeight: "bold",
+												marginBottom: 15,
+											}}
+										>
+											Description
+										</Text>
 										<Text style={{ fontSize: 20 }}>
 											Quisque nec sapien id tellus accumsan iaculis.
 											Pellentesque laoreet dui leo, in lobortis est tempus a
@@ -56,7 +66,7 @@ export default function SingleFoodpage() {
 							</ScrollView>
 						</ScrollView>
 					</View>
-					<CartButton buttonText="Go to Cart" price="$24.99" itemCount="3" />
+					<AddToCartButton />
 				</View>
 			</SafeAreaView>
 		</SafeAreaProvider>
